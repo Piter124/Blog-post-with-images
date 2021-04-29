@@ -1,0 +1,36 @@
+<% include partials/header %>
+<%- include("./partials/navbar") %>
+<div class="container mt-5">
+    <h3 class="my-3">Compose Your Blog Here... 😍 </h3>
+    <form class="column-form" action="/compose" method="POST" enctype="multipart/form-data">
+            
+        <p>
+            <label for="filePicker">File attachment:</label>
+            <span>
+                <input id="filePicker" type="file" name="image" class="form-control" data-widget="fileinput" data-translation-browse="Find a file" data-translation-remove="Ditch it" />
+            </span>
+            <span class="item-note">Upload size limit (xxxx MB)</span>
+        </p>    
+        <p>
+            <label class="column-field-label">Name your blog post <span class="required">*</span></label>
+            <span>
+                
+                <input type="text" name="title" placeholder="Enter Title" class="form-control" required>
+            </span>
+        </p>
+        <p>
+            <label class="column-field-label">Write your blog post here...</label>
+            <span>
+                <textarea name="content" cols="50" rows="10" class="form-control" placeholder="Enter Content Here..."
+            required></textarea>
+            </span>
+        </p>
+       
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/" class="btn btn-warning" >Cancel</a> 
+        
+        <!-- <input type="submit" value="Compose" class="btn-sec"> -->
+        
+    </form>
+</div>
+<% include partials/footer %>

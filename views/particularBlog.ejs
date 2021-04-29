@@ -1,0 +1,20 @@
+<% include partials/header %>
+<%- include("./partials/navbar") %>
+
+<div class="container mt-5">
+    <picture>
+        <img src="/uploads/<%=blog.image %>" alt="yyy" width="300"/> 
+       <!-- <%= blog.image %> -->
+    </picture>
+   <p class="h4 light textcolor-blue-50">published at: <%= blog.postedAt %> </p>
+   <p class="h3 medium light"><%= blog.title %> </p>
+
+   <p class="h4 medium light"><%= blog.content %> </p>
+
+   <p class="ind-link"><a href="/" class="btn btn-primary previous-link">Back to blog</a></p>
+
+   <a href=" /edit/<%= blog._id %>" class="btn btn-warning">Edit</a>
+   <a href=" /delete/<%= blog._id %>" class="btn btn-danger">Delete</a>
+</div>
+
+<% include partials/footer %>

@@ -1,0 +1,9 @@
+applications:
+- name: blog-post-with-images
+  buildpacks:
+    - sdk-for-nodejs
+  random-route: true
+  memory: 128M
+  instances: 1
+  services:
+  - hcb-mongodb

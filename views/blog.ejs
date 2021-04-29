@@ -1,0 +1,33 @@
+<% include partials/header %> 
+<%- include("./partials/navbar") %>       
+<div class="container">
+<h3>All Blogs  </h3>
+<a href="/compose" class="btn btn-primary">Add new post</a>
+
+<div class="py-5">
+    <div class="container">
+      <div class="row hidden-md-up">
+        <% blogs.reverse() %> 
+        <% blogs.forEach(blog => { %>
+        <div class="col-md-4">
+          <div class="card">
+              <div class=card-image">
+                <img src="/uploads/<%=blog.image %>" style=" object-fit: cover; width:100%; max-height: 100%;" alt="" />
+              </div>
+            <div class="card-body">
+                <p class="text-muted">published at: <%= blog.postedAt %> </p>
+                <h5 class="card-title"><%= blog.title %> </h5>
+                <p class="card-text"><%= blog.content.slice(0, 99) %> .... <a href="/blog/<%= blog._id %>">Read More</a></p>
+                <a href=" /blog/<%= blog._id %>" class="btn btn-primary">Read More...</a>
+                <a href=" /delete/<%= blog._id %>" class="btn btn-danger">Delete</a>
+                <a href=" /edit/<%= blog._id %>" class="btn btn-warning">Edit</a>
+            </div>
+          </div>
+        </div>
+        <%}) %>
+        </div>
+        </div>
+        </div>
+</div>        
+<% include partials/footer %>
+

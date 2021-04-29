@@ -1,0 +1,5 @@
+launchConfigurations/
+node_modules/
+package-lock.json
+.DS_Store
+vcap_local.json
