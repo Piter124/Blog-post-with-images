@@ -33,7 +33,11 @@ if(mongodbConfig.isLocal){
         useCreateIndex: true,
         useUnifiedTopology: true
   };
-    mongoose.connect(unicodeToChar(mongoURI), mongoDbOptions)
+  mongoose.connect('mongodb+srv://piotr:zwxgZllQkdlXujeB@cluster0.zoo9v.mongodb.net/node-angular?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+})
         .then(res => console.log("Connected to mongodb instance"))
         .catch(function (reason) {
             console.log('Unable to connect to the mongodb instance. Error: ', reason);
